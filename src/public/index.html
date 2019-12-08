@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8">
+    <title>Linus Berg</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="js/socket.io.js"></script>
+    <script src="js/WOPR.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+      <div id="console_wrapper">
+        <div id="console">
+          <pre id="logo" class="cmd_line">
+##       #### ##    ## ##     ##  ######     ########  ######## ########   ######   
+##        ##  ###   ## ##     ## ##    ##    ##     ## ##       ##     ## ##    ##  
+##        ##  ####  ## ##     ## ##          ##     ## ##       ##     ## ##        
+##        ##  ## ## ## ##     ##  ######     ########  ######   ########  ##   #### 
+##        ##  ##  #### ##     ##       ##    ##     ## ##       ##   ##   ##    ##  
+##        ##  ##   ### ##     ## ##    ##    ##     ## ##       ##    ##  ##    ##  
+######## #### ##    ##  #######   ######     ########  ######## ##     ##  ######
+          </pre>
+        </div>
+        <span>
+          $> <input id="cmd_txt" type="text" autofocus>
+        </span>
+      </div> 
+  </body>
+  <script type="text/javascript">
+    var socket = io();
+    var wop = new WOPR(); 
+    function PrintToTerminal(msg, cmd) {
+      $('#console').append('<pre class="cmd_line' +
+                           (cmd ? ' cmd' : '') + '">' +
+                           (cmd ? '$> ' : '') + msg + '</pre>');
+      $("#console").scrollTop($("#console")[0].scrollHeight);
+    }
+    
+    function PrintLink(link, text) {
+      var bs = '<div class="business">';
+      bs = bs + link + '</br>';
+      bs = bs + business.display_phone + '</br>';
+      $('#console').append(bs);
+      $("#console").scrollTop($("#console")[0].scrollHeight);
+    }
+    
+    /* Send command to server. */
+    function ProcessCommand(msg) {
+      $('#cmd_txt').val('');
+      if (msg.toLowerCase() == 'clear') {
+        $('#console').empty();
+      } else {
+        wop.ProcessCommand(msg); 
+      }
+    }
+    
+    /* On enter. */
+    $('#cmd_txt').keypress(function (e) {
+      if (e.which == 13) {
+        var cmd = $('#cmd_txt').val();
+        ProcessCommand(cmd);
+        return false;
+      }
+    });
+    PrintToTerminal("Type help for assistance.", false); 
+  </script>
+</html>

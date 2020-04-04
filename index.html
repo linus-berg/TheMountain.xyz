@@ -5,50 +5,54 @@
   <title>Linus Berg</title>
   <meta name="description" content="Linus Berg's personal space">
   <meta name="author" content="Linus Berg">
+  <link rel="stylesheet" href="css/reset.css?v=1.0">
   <link rel="stylesheet" href="css/style.css?v=1.0">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.1/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.1/d3.min.js"></script>
 </head>
 
 <body>
-  <p>
-    Hi, I'm Linus.
-  </p>
-  <div id="link-wrapper">
+  <h2>Linus Berg</h2>
+  <h3>Software Engineer</h3>
+  <div id="information">
+    <table>
+      <tbody>
+        <tr>
+          <td class="info">E-mail</td>
+          <td>linus@fenix.me.uk</td>
+        </tr>
+        <tr>
+          <td class="info">Address</td>
+          <td>Könitzvägen 22, 141 38, Stockholm</td>
+        </tr>
+        <tr>
+          <td class="info">Tel.</td>
+          <td>+46 70 55 55 892</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div id="table-wrapper">
     <table id="link-table">
       <thead>
         <tr>
+          <th>Links</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <table id="file-table">
+      <thead>
+        <tr>
           <th>Description</th>
-          <th>Link</th>
+          <th>File</th>
         </tr>
       </thead>
       <tbody>
       </tbody>
     </table>
   </div>
-  <script type="text/javascript">
-    let links = [
-      {
-        desc: 'Twitter',
-        link: 'https://twitter.com/linusberg_'
-      },
-      {
-        desc: 'Github',
-        link: 'https://github.com/linus-berg'
-      },
-      {
-        desc: 'LinkedIn',
-        link: 'https://www.linkedin.com/in/linus-berg-488b49121/',
-      }
-    ];
-    let body = d3.select('#link-table tbody');
-    let rows = body.selectAll('tr').data(links).enter().append('tr');
-    rows.each(function(d, i) {
-      let row = d3.select(this);
-      console.log(row, d);
-      row.append('td').text(d.desc);
-      row.append('td').append('a').attr('href', d.link).text(d.link);
-    });
-  </script>
+  <script src="./js/populate.js"></script>
 </body>
 </html>
 

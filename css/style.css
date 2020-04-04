@@ -1,20 +1,58 @@
 body {
   background-color: #f4f4f4;
-  font-family: Courier, monospace;
-}
-
-table, th, td {
-  border: 0.5px solid black;
-}
-
-td, th {
+  font-family: Courier, monospace !important;
   padding-left: 4px;
   padding-right: 4px;
 }
 
-th {
-  text-align: left;
+h2 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  font-variant: small-caps;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-variant: small-caps;
+}
+
+#information {
+  margin-bottom: 4px;  
+}
+
+#information tr {
+  font-variant: small-caps;
+}
+
+.info {
   background-color: #FFFF8D;
+  font-weight: bold;
+  font-variant: small-caps;
+}
+
+#table-wrapper table {
+  display: inline-block;
+  border: 0px;
+  vertical-align: top;
+}
+
+table, th, td {
+  border: 0.5px solid black;
+  text-align: left;
+}
+
+th {
+  font-weight: bold;
+  font-size: 1.1rem;
+  font-variant: small-caps;
+  background-color: #FFFF8D;
+  padding: 3px;
+}
+
+td {
+  padding-top: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 

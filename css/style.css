@@ -7,12 +7,30 @@ body {
 
 h2 {
   font-size: 1.5rem;
-  margin-top: 10px;
   font-variant: small-caps;
+  margin-top: 10px;
 }
 
 h3 {
   font-size: 1.2rem;
+  font-variant: small-caps;
+}
+
+table, th, td {
+  border: 0.5px solid black;
+  text-align: left;
+}
+
+td, th {
+  padding-top: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+th {
+  background-color: #FFFF8D;
+  font-weight: bold;
+  font-size: 1.1rem;
   font-variant: small-caps;
 }
 
@@ -31,28 +49,7 @@ h3 {
 }
 
 #table-wrapper table {
-  display: inline-block;
-  border: 0px;
+  display: inline-table;
   vertical-align: top;
 }
-
-table, th, td {
-  border: 0.5px solid black;
-  text-align: left;
-}
-
-th {
-  font-weight: bold;
-  font-size: 1.1rem;
-  font-variant: small-caps;
-  background-color: #FFFF8D;
-  padding: 3px;
-}
-
-td {
-  padding-top: 4px;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
 

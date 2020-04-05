@@ -33,18 +33,14 @@ th {
   font-size: 1.1rem;
   font-variant: small-caps;
 }
-
+#file-header {
+  text-align: center;
+}
 #information {
   margin-bottom: 4px;  
 }
 
 #information tr {
-  font-variant: small-caps;
-}
-
-.info {
-  background-color: #FFFF8D;
-  font-weight: bold;
   font-variant: small-caps;
 }
 

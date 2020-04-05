@@ -17,18 +17,20 @@ const files = [
   {
     desc: 'Extended CV',
     link: './files/CV.pdf'
-  }
+  },
 ];
 
-let body = d3.select('#link-table tbody');
-links.forEach(function(d, i) {
+let body = d3.select('#listings');
+const L = links.length > files.length ? links.length : files.length;
+for (let i = 0; i < L; i++) {
   let row = body.append('tr');
-  row.append('td').append('a').attr('href', d.link).text(d.desc);
-});
+  let link = row.append('td');
+  if (links[i]) {
+   link.append('a').attr('href', links[i].link).text(links[i].desc); 
+  }
+  if (files[i]) {
+    row.append('td').text(files[i].desc);
+    row.append('td').append('a').attr('href', files[i].link).text(files[i].link);
+  }
+}
 
-body = d3.select('#file-table tbody');
-files.forEach(function(d, i) {
-  let row = body.append('tr');
-  row.append('td').text(d.desc);
-  row.append('td').append('a').attr('href', d.link).text(d.link);
-});

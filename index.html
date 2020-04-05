@@ -13,49 +13,38 @@
 <body>
   <h2>Linus Berg</h2>
   <h3>Software Engineer</h3>
-  <table id="information">
-    <tbody>
-      <tr>
-        <td class="info">E-mail</td>
-        <td>linus@fenix.me.uk</td>
-      </tr>
-      <tr>
-        <td class="info">Address</td>
-        <td>Könitzvägen 22, 141 38, Stockholm</td>
-      </tr>
-      <tr>
-        <td class="info">Tel.</td>
-        <td>+46 70 55 55 892</td>
-      </tr>
-    </tbody>
-  </table>
   <div id="table-wrapper">
-    <table id="link-table">
-      <thead>
+    <table>
+      <!-- Contact Info -->
+      <thead id="information">
         <tr>
-          <th>Links</th>
+          <th>E-mail</th>
+          <td colspan="2">linus@fenix.me.uk</td>
+        </tr>
+        <tr>
+          <th>Address</th>
+          <td colspan="2">Könitzvägen 22, 141 38, Stockholm</td>
+        </tr>
+        <tr>
+          <th>Tel.</th>
+          <td colspan="2">+46 70 55 55 892</td>
         </tr>
       </thead>
-      <tbody>
-      </tbody>
-    </table>
-    <table id="file-table">
-      <thead>
+
+      <!-- Listings -->
+      <thead> 
+        <tr>
+          <th rowspan="2">Links</th>
+          <th id="file-header" colspan="2">Files</th>
+        </tr>
         <tr>
           <th>Description</th>
-          <th>File</th>
+          <th>Path</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="listings">
       </tbody>
     </table>
-    <p id="w3-valid-css">
-      <a href="https://jigsaw.w3.org/css-validator/check/referer">
-        <img style="border:0;width:88px;height:31px"
-             src="https://jigsaw.w3.org/css-validator/images/vcss"
-             alt="Valid CSS!" />
-      </a>
-    </p>
   </div>
   <script src="./js/populate.js"></script>
 </body>

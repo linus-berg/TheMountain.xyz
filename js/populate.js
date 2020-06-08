@@ -17,7 +17,7 @@ const files = [
   {
     desc: 'Extended CV',
     link: './files/CV.pdf'
-  },
+  }
 ];
 
 let body = d3.select('#listings');

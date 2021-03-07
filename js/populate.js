@@ -20,7 +20,7 @@ const files = [
   },
   {
     desc: 'Target Maker',
-    link: '/lib/Mark'
+    link: '/lib/Mark/'
   }
 ];
 

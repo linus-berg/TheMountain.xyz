@@ -1,8 +1,6 @@
 body {
   background-color: #f4f4f4;
   font-family: Courier, monospace !important;
-  padding-left: 4px;
-  padding-right: 4px;
 }
 
 h2 {
@@ -19,6 +17,7 @@ h3 {
 table, th, td {
   border: 0.5px solid black;
   text-align: left;
+  vertical-align: bottom;
 }
 
 td, th {
@@ -36,6 +35,7 @@ th {
 #file-header {
   text-align: center;
 }
+
 #information {
   margin-bottom: 4px;  
 }
@@ -44,12 +44,17 @@ th {
   font-variant: small-caps;
 }
 
+#table-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
 #table-wrapper table {
+  margin-left: 4px;
+  margin-right: 4px;
   display: inline-table;
-  vertical-align: top;
 }
-
-#w3-valid-css {
-  margin-top: 8px;
-}
-
